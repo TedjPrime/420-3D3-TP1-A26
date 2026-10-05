@@ -12,7 +12,6 @@ class Sujet(ABC):
         self._observateurs.remove(observateur)
 
     def notifier(self) -> None:
-        # À compléter — quelle méthode appelle-t-on sur chaque observateur ?
         for observateur in self._observateurs:
             observateur.actualiser(self)
 
