@@ -4,7 +4,7 @@ class ObservateurPortfolio(Observateur):
     def __init__(self, vue):
         self.vue = vue
 
-    def mettre_a_jour(self, sujet):
+    def actualiser(self, sujet):
         d = sujet.get_donnees()
         if d["erreur"]:
             self.vue.label_maj.config(text=f"Erreur : {d['erreur']}", fg="red")

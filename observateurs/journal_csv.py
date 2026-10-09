@@ -6,7 +6,7 @@ class ObservateurJournalCSV(Observateur):
     def __init__(self, fichier="portfolio.csv"):
         self.fichier = fichier
 
-    def mettre_a_jour(self, sujet):
+    def actualiser(self, sujet):
         d = sujet.get_donnees()
         if d["origine"] != "rafraichissement" or d["erreur"]:
             return

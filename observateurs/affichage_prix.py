@@ -11,7 +11,7 @@ class ObservateurPrix(Observateur):
     def __init__(self, vue):
         self.vue = vue
 
-    def mettre_a_jour(self, sujet):
+    def actualiser(self, sujet):
         d = sujet.get_donnees()
         lignes = {t: formater_prix(*d["prix"][t]) if t in d["prix"] else ("Chargement...", "black")
                   for t in d["titres"]}
