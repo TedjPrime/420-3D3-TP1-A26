@@ -83,7 +83,7 @@ class Portefeuille(Sujet):
                 )
 
         try:
-            prix, ouverture = recuperer_prix(ticker)
+            prix, _ = recuperer_prix(ticker)
         except Exception as erreur:
             raise ValueError(
                 f"Le titre '{ticker}' n'existe pas."
@@ -131,7 +131,7 @@ class Portefeuille(Sujet):
 
         if quantite is not None:
             quantite = int(quantite)
-            if quantite < 0:
+            if quantite <= 0:
                 raise ValueError(
                     "La quantité doit être un nombre entier positif."
                 )
@@ -145,7 +145,7 @@ class Portefeuille(Sujet):
             seuil_bas = float(seuil_bas)
             seuil_haut = float(seuil_haut)
 
-            if seuil_bas < 0 or seuil_haut < 0:
+            if seuil_bas <= 0 or seuil_haut <= 0:
                 raise ValueError(
                     "Les alertes doivent être des nombres positifs."
                 )
